@@ -6,12 +6,12 @@ export default function Reveal({
   children,
   className = "",
   delay = 0,
-  as: Tag = "div",
+  as,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: React.ElementType;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -34,7 +34,8 @@ export default function Reveal({
     return () => io.disconnect();
   }, [delay]);
 
-  const Component = Tag as React.ElementType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Component: any = as ?? "div";
   return (
     <Component ref={ref} className={`reveal ${className}`}>
       {children}
