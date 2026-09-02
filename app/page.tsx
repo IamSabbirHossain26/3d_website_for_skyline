@@ -33,8 +33,6 @@ export default function Home() {
           <Clients />
           <Faq />
         </div>
-
-        {/* CTA is transparent again — the morphed building reappears */}
         <Cta />
       </main>
 
