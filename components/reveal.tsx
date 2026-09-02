@@ -34,7 +34,6 @@ export default function Reveal({
     return () => io.disconnect();
   }, [delay]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Component: any = as ?? "div";
   return (
     <Component ref={ref} className={`reveal ${className}`}>
